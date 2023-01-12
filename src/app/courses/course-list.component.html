@@ -1,7 +1,7 @@
-<h2>Course List</h2>
+<h2>Lista de Cursos</h2>
 
 <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Filter By:</label>
+    <label class="col-sm-2 col-form-label">Filtrar por:</label>
     
     <div class="col-sm-10">
         <input [(ngModel)]="filter" class="form-control">
@@ -10,13 +10,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Code</th>
-            <th>Release Date</th>
-            <th>Rating</th>
-            <th>Options</th>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Código</th>
+            <th>Data</th>
+            <th>Avaliação</th>
+            <th>Opções</th>
 
         </tr>
         </thead>
@@ -31,7 +31,8 @@
                 <app-star [rating]="course.rating"></app-star>
             </td>
             <td>
-                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Editar</a>
+                <button (click)="deleteById(course.id)" class="btn btn-danger">Deletar</button>
             </td>
             </tr>
         </tbody>
